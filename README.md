@@ -1,4 +1,4 @@
-# Tiqets
+# 🎢 Tiqets
 
 A simple (unofficial) Ruby wrapper for the [Tiqets](https://www.tiqets.com) [API](https://api.tiqets.com/v2/docs/).
 
