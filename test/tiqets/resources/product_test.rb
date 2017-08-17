@@ -8,11 +8,11 @@ module Tiqets
       end
 
       def test_find_product
-        response = @client.find_product(973698)
+        product = @client.find_product(973698)
 
-        assert_kind_of Hash, response
-        assert_equal '973698', response['id']
-        assert_equal 'Louvre Museum: Skip The Line', response['title']
+        assert_kind_of ::Tiqets::Resources::Product::Product, product
+        assert_equal '973698', product.id
+        assert_equal 'Louvre Museum: Skip The Line', product.title
       end
     end
   end
