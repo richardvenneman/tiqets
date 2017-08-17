@@ -1,8 +1,6 @@
 module Tiqets
   module Resources
     module Product
-      SLUG = 'products'.freeze
-
       def find_product(id)
         response = get("products/#{id}", 'product')
         Product.new(response)
