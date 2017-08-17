@@ -5,7 +5,15 @@ class TiqetsTest < Minitest::Test
     refute_nil ::Tiqets::VERSION
   end
 
-  def test_it_does_something_useful
-    assert false
+  def test_default_api
+    assert_raises KeyError do
+      Tiqets.default_api
+    end
+
+    ENV['TIQETS_API_KEY'] = 'test_api_key'
+
+    assert_kind_of Tiqets::Client, Tiqets.default_api
+
+    ENV['TIQETS_API_KEY'] = nil
   end
 end

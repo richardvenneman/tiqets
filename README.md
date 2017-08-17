@@ -22,7 +22,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+You must be in possession of a Tiqets API key. Use this key to initialize a new API client:
+
+```ruby
+Tiqets::Client.new(api_key: 'my-api-key')
+```
+
+Alternatively you can set the `TIQETS_API_KEY` environment variable and use the shared API instance with:
+
+```ruby
+Tiqets.default_api
+```
 
 ## Contributing
 
