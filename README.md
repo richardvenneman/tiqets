@@ -1,8 +1,8 @@
 # Tiqets
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/tiqets`. To experiment with that code, run `bin/console` for an interactive prompt.
+A simple (unofficial) Ruby wrapper for the [Tiqets](https://www.tiqets.com) [API](https://api.tiqets.com/v2/docs/).
 
-TODO: Delete this and the text above, and describe your gem
+Full 100% API coverage is not a direct goal as we're primarily developing this for our needs at [CitySpotters](https://www.cityspotters.com). Pull requests are definitely welcome.
 
 ## Installation
 
@@ -25,13 +25,23 @@ Or install it yourself as:
 You must be in possession of a Tiqets API key. Use this key to initialize a new API client:
 
 ```ruby
-Tiqets::Client.new(api_key: 'my-api-key')
+@client = Tiqets::Client.new(api_key: 'my-api-key')
 ```
 
 Alternatively you can set the `TIQETS_API_KEY` environment variable and use the shared API instance with:
 
 ```ruby
-Tiqets.default_api
+@client = Tiqets.default_api
+```
+
+### Products
+
+#### Get a single product
+Finds a product by Product ID. Returns an object with the properties [described in the API documentation](https://api.tiqets.com/v2/docs/#the-product-object).
+
+```ruby
+@client.find_product(973698)
+# => #<Tiqets::Resources::Product::Product:0x007fe9c8438a00>
 ```
 
 ## Contributing
