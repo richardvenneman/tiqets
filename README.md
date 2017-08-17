@@ -2,6 +2,10 @@
 
 A simple (unofficial) Ruby wrapper for the [Tiqets](https://www.tiqets.com) [API](https://api.tiqets.com/v2/docs/).
 
+[![Travis CI status](https://img.shields.io/travis/richardvenneman/tiqets.svg?style=flat-square)](https://travis-ci.org/richardvenneman/tiqets)
+[![RubyGem](https://img.shields.io/gem/v/tiqets.svg?style=flat-square)](https://rubygems.org/gems/tiqets)
+
+
 Full 100% API coverage is not a direct goal as we're primarily developing this for our needs at [CitySpotters](https://www.cityspotters.com). Pull requests are definitely welcome.
 
 ## Installation
