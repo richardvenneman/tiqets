@@ -13,7 +13,7 @@ module Tiqets
     def test_root
       client = Client.new(api_key: 'test_api_key')
 
-      assert_equal 'https://api.tiqets.com/v2',
+      assert_equal 'https://api.tiqets.com/v2/',
                    client.instance_variable_get(:@root)
 
       client = Client.new(root: 'https://test-api.com', api_key: 'test_api_key')
@@ -25,6 +25,11 @@ module Tiqets
       client = Client.new(api_key: 'test_api_key')
 
       assert_kind_of HTTP::Client, client.connection
+    end
+
+    def test_get
+      client = Client.new(api_key: 'test_api_key')
+      client.get('products/973698', 'product')
     end
   end
 end
