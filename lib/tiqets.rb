@@ -1,3 +1,5 @@
+require 'http'
+
 require 'tiqets/version'
 require 'tiqets/client'
 

@@ -20,5 +20,11 @@ module Tiqets
 
       assert_equal 'https://test-api.com', client.instance_variable_get(:@root)
     end
+
+    def test_connection
+      client = Client.new(api_key: 'test_api_key')
+
+      assert_kind_of HTTP::Client, client.connection
+    end
   end
 end

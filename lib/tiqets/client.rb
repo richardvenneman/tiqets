@@ -6,5 +6,9 @@ module Tiqets
       @root = root
       @api_key = api_key
     end
+
+    def connection
+      @connection ||= HTTP.auth("Authorization: Token #{@api_key}")
+    end
   end
 end
