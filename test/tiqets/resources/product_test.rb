@@ -7,12 +7,6 @@ module Tiqets
         @client = ::Tiqets::Client.new(api_key: 'test_api_key')
       end
 
-      def test_find_product_error
-        assert_raises ApiError, "Product '1' was not found" do
-          @client.find_product(1)
-        end
-      end
-
       def test_find_product
         response = @client.find_product(973698)
 

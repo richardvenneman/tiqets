@@ -10,8 +10,15 @@ module MockTiqets
 
     stub_request(:get, 'https://api.tiqets.com/v2/products/1')
       .with(headers: default_headers)
-      .to_return(status: 200,
+      .to_return(status: 404,
                  body: File.new('test/fixtures/errors/product.json'))
+
+    stub_request(:get, 'https://api.tiqets.com/v2/products/1')
+      .with(headers: default_headers.merge(
+        'Authorization' => 'Authorization: Token faulty_api_key'
+      ))
+      .to_return(status: 401,
+                 body: File.new('test/fixtures/errors/authorization.json'))
 
     super
   end

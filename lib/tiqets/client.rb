@@ -25,9 +25,9 @@ module Tiqets
 
     def handle_response(response, response_key)
       response = JSON.parse(response)
-      raise ApiError, response['message'] if response['success'] == false
+      return response[response_key] if response['success'] == true
 
-      response[response_key]
+      raise Error.new(response['status'], response['message'])
     end
   end
 end
