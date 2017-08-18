@@ -8,11 +8,11 @@ module Tiqets
       end
 
       def test_find_product
-        product = @client.find_product(973698)
+        product = @client.find_product(973698, lang: 'nl', currency: 'EUR')
 
         assert_kind_of ::Tiqets::Resources::Product::Product, product
         assert_equal '973698', product.id
-        assert_equal 'Louvre Museum: Skip The Line', product.title
+        assert_equal 'Louvre Museum: Skip the line', product.title
       end
     end
   end

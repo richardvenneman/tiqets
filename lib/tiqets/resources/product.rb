@@ -1,8 +1,8 @@
 module Tiqets
   module Resources
     module Product
-      def find_product(id)
-        response = get("products/#{id}", 'product')
+      def find_product(id, params = {})
+        response = get("products/#{id}", params, 'product')
         Product.new(response)
       end
 
