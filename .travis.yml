@@ -7,4 +7,11 @@ rvm:
   - 2.3.4
   - 2.4.1
 
+addons:
+  code_climate:
+    repo_token: aa95c18c4a614c7aad6306f78f9d205bf04481ca82e91138cd9f4c1b573bf4bd
+
 before_install: gem install bundler -v 1.15.3
+
+after_success:
+  - bundle exec codeclimate-test-reporter
