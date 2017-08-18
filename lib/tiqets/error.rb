@@ -1,6 +1,6 @@
 module Tiqets
   class Error < Exception
-    attr_reader :code, :error
+    attr_reader :code, :message
 
     def initialize(code, error)
       @code = code
@@ -10,9 +10,7 @@ module Tiqets
     end
 
     def message
-      message = "Tiqets API Error: #{@error}"
-      message += " (code: #{@code})" unless @code.nil?
-      message
+      "Tiqets API error: #{@error}"
     end
   end
 end
