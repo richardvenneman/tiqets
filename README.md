@@ -41,12 +41,17 @@ Alternatively you can set the `TIQETS_API_KEY` environment variable and use the 
 
 ### Products
 
-#### Get a single product
+#### client#find_product(product_id, params)
+
 Finds a product by Product ID. Returns an object with the properties [described in the API documentation](https://api.tiqets.com/v2/docs/#the-product-object).
 
+Requires the `lang` and `currency` params [as specified in the API documentation](https://api.tiqets.com/v2/docs/#get-a-single-product).
+
 ```ruby
-@client.find_product(973698)
+product = @client.find_product(973698)
 # => #<Tiqets::Resources::Product::Product:0x007fe9c8438a00>
+
+product.title #=> "Louvre Museum: Skip the line"
 ```
 
 ## Contributing
