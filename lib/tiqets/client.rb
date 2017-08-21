@@ -14,7 +14,7 @@ module Tiqets
     end
 
     def connection
-      @connection ||= HTTP.auth("Authorization: Token #{@api_key}")
+      @connection ||= HTTP.auth("Token #{@api_key}")
     end
 
     def get(url, params, response_key)

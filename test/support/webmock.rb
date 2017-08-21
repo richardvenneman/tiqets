@@ -15,7 +15,7 @@ module MockTiqets
 
     stub_request(:get, 'https://api.tiqets.com/v2/products/1?lang=nl&currency=EUR')
       .with(headers: default_headers.merge(
-        'Authorization' => 'Authorization: Token faulty_api_key'
+        'Authorization' => 'Token faulty_api_key'
       ))
       .to_return(status: 401,
                  body: File.new('test/fixtures/errors/authorization.json'))
@@ -27,7 +27,7 @@ module MockTiqets
 
   def default_headers
     {
-      'Authorization' => 'Authorization: Token test_api_key',
+      'Authorization' => 'Token test_api_key',
       'Connection' => 'close',
       'Host' => 'api.tiqets.com',
       'User-Agent' => 'http.rb/2.2.2'
