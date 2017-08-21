@@ -7,12 +7,13 @@ module Tiqets
       end
 
       class Product
-        attr_reader :id, :language, :languages, :title, :tagline, :price,
+        attr_reader :data, :id, :language, :languages, :title, :tagline, :price,
                     :sale_status, :country_name, :country_id, :city_name,
                     :city_id, :tag_ids, :images, :ratings, :geolocation,
                     :distance, :venue, :product_url, :product_checkout_url
 
         def initialize(attributes)
+          @data = attributes
           @id = attributes['id']
           @language = attributes['language']
           @languages = attributes['languages']
