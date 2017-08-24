@@ -14,6 +14,16 @@ module Tiqets
         assert_equal '973698', product.id
         assert_equal 'Louvre Museum: Skip the line', product.title
       end
+
+      def test_find_erroneous_product
+        exception = assert_raises ::Tiqets::Error do
+          @client.find_product(1, lang: 'nl', currency: 'EUR')
+        end
+
+        assert_equal 404, exception.code
+        assert_equal "Tiqets API error: product '1' was not found.",
+                     exception.message
+      end
     end
   end
 end
