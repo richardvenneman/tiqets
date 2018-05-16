@@ -28,6 +28,8 @@ module Tiqets
       return response[response_key] if response['success'] == true
 
       raise Error.new(response['status'], response['message'])
+    rescue JSON::ParserError
+      raise Error.new(404, 'Not Found')
     end
   end
 end
