@@ -1,5 +1,5 @@
 module Tiqets
-  class Error < Exception
+  class Error < StandardError
     attr_reader :code, :message
 
     def initialize(code, error)
