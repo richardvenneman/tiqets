@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   end
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'http', '~> 2'
+  spec.add_runtime_dependency 'http', '~> 3'
 
   spec.add_development_dependency 'bundler', '~> 1.15'
   spec.add_development_dependency 'guard', '~> 2'

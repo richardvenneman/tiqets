@@ -30,7 +30,7 @@ module MockTiqets
       'Authorization' => 'Token test_api_key',
       'Connection' => 'close',
       'Host' => 'api.tiqets.com',
-      'User-Agent' => 'http.rb/2.2.2'
+      'User-Agent' => /http\.rb\/.+/
     }
   end
 end
